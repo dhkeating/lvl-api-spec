@@ -19,7 +19,21 @@ paths:
                 type: array
                 items:
                   $ref: ../models/TitleList.v1.yaml
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - id: 0
+                      name: string
+                      short_name: string
+                      icon: string
+                      bannner: string
+                      card_bg: string
+                      genre: string
+                      platforms:
+                        - id: 0
+                          name: PlayStation 5
+                          abbreviation: PS5
+                          icon: 'http://example.com'
       operationId: get-titles
   '/titles/{title_id}':
     parameters:
@@ -39,7 +53,39 @@ paths:
             application/json:
               schema:
                 $ref: ../models/TitleDetailed.v1.yaml
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    id: 0
+                    name: string
+                    short_name: string
+                    genre: string
+                    icon: 'http://example.com'
+                    banner: 'http://example.com'
+                    card_bg: 'http://example.com'
+                    platforms:
+                      - id: 0
+                        name: PlayStation 5
+                        abbreviation: PS5
+                        icon: 'http://example.com'
+                    game_modes:
+                      - id: 0
+                        name: string
+                    maps:
+                      - id: 0
+                        name: string
+                    roles:
+                      - id: 0
+                        name: string
+                        positions:
+                          - id: 0
+                            name: string
+                            abbreviation: string
+                        role_statistics:
+                          - id: 0
+                            statistic_name: string
+                            statistic_type: 'N'
+                            order: 0
       operationId: get-titles-title_id
 components:
   schemas: {}

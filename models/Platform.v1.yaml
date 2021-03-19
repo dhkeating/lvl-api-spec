@@ -14,4 +14,9 @@ properties:
   icon:
     type: string
     format: uri
-x-examples: {}
+x-examples:
+  example-1:
+    id: 0
+    name: PlayStation 5
+    abbreviation: PS5
+    icon: 'http://example.com'
