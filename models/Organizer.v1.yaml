@@ -1,0 +1,48 @@
+title: Organizer
+type: object
+x-tags:
+  - Organizers
+x-examples: {}
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  abbreviation:
+    type: string
+  description:
+    type: string
+  icon:
+    type: string
+  supported_titles:
+    type: array
+    items:
+      $ref: ./TitleList.v1.yaml
+  organizer_integrations:
+    type: object
+    properties:
+      website_url:
+        type: string
+      discord_url:
+        type: string
+      twitter_url:
+        type: string
+      twitch_url:
+        type: string
+      youtube_url:
+        type: string
+  user_context:
+    type: object
+    properties:
+      logged_in:
+        type: boolean
+      lvl_staff:
+        type: boolean
+      organizer_staff:
+        type: boolean
+      organizer_owner:
+        type: boolean
+      permissions:
+        type: array
+        items:
+          type: string
