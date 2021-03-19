@@ -4,7 +4,207 @@ info:
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
-paths: {}
+paths:
+  /organizers:
+    get:
+      summary: List Organizers
+      tags:
+        - Organizers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ''
+              examples: {}
+      operationId: get-organizers
+  '/organizers/{organizer_id}':
+    parameters:
+      - schema:
+          type: string
+        name: organizer_id
+        in: path
+        required: true
+    get:
+      summary: Retrieve Organizer
+      tags:
+        - Organizers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Organizer.v1.yaml
+              examples:
+                example-1:
+                  value:
+                    id: 0
+                    name: string
+                    abbreviation: string
+                    description: string
+                    icon: string
+                    supported_titles:
+                      - id: 0
+                        name: string
+                        short_name: string
+                        icon: string
+                        bannner: string
+                        card_bg: string
+                        genre: string
+                        platforms:
+                          - id: 0
+                            name: PlayStation 5
+                            abbreviation: PS5
+                            icon: 'http://example.com'
+                    organizer_integrations:
+                      website_url: string
+                      discord_url: string
+                      twitter_url: string
+                      twitch_url: string
+                      youtube_url: string
+                    user_context:
+                      logged_in: true
+                      lvl_staff: true
+                      organizer_staff: true
+                      organizer_owner: true
+                      permissions:
+                        - string
+      operationId: get-organizers-organizer_id
+    patch:
+      summary: Update Organizer
+      tags:
+        - Organizers
+      responses: {}
+      operationId: patch-organizers-organizer_id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                abbreviation:
+                  type: string
+                  minLength: 1
+                description:
+                  type: string
+                  minLength: 1
+                icon:
+                  type: string
+                  minLength: 1
+                supported_titles:
+                  type: array
+                  uniqueItems: true
+                  minItems: 1
+                  items:
+                    type: integer
+                organizer_integrations:
+                  type: object
+                  properties:
+                    website_url:
+                      type: string
+                      minLength: 1
+                    discord_url:
+                      type: string
+                      minLength: 1
+                    twitter_url:
+                      type: string
+                      minLength: 1
+                    twitch_url:
+                      type: string
+                      minLength: 1
+                    youtube_url:
+                      type: string
+                      minLength: 1
+        description: ''
+  '/organizers/{organizer_id}/staff':
+    parameters:
+      - schema:
+          type: string
+        name: organizer_id
+        in: path
+        required: true
+    get:
+      summary: List Organizer Staff
+      tags:
+        - Organizer Staff
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/OrganizerStaff.v1.yaml
+              examples: {}
+      operationId: get-organizers-organizer_id-staff
+    post:
+      summary: Add Organizer Staff
+      tags:
+        - Organizer Staff
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../models/OrganizerStaff.v1.yaml
+              examples: {}
+      operationId: post-organizers-organizer_id-staff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: integer
+  '/organizers/{organizer_id}/staff/{organizer_staff_id}':
+    parameters:
+      - schema:
+          type: string
+        name: organizer_id
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: organizer_staff_id
+        in: path
+        required: true
+    patch:
+      summary: Update Organizer Staff Member
+      tags:
+        - Organizer Staff
+      responses:
+        '200':
+          description: OK
+      operationId: patch-organizers-organizer_id-staff-organizer_staff_id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role:
+                  type: string
+    delete:
+      summary: Remove Organizer Staff Member
+      tags:
+        - Organizer Staff
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+      operationId: delete-organizers-organizer_id-staff-organizer_staff_id
 components:
   schemas: {}
   securitySchemes: {}

@@ -1,0 +1,14 @@
+title: UserList
+type: object
+x-tags:
+  - Users
+x-examples: {}
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+    example: Username
+  avatar:
+    type: string
+    format: uri
