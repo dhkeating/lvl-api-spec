@@ -21,5 +21,25 @@ paths:
                   $ref: ../models/TitleList.v1.yaml
               examples: {}
       operationId: get-titles
+  '/titles/{title_id}':
+    parameters:
+      - schema:
+          type: string
+        name: title_id
+        in: path
+        required: true
+    get:
+      summary: Retrieve Title
+      tags:
+        - Titles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/TitleDetailed.v1.yaml
+              examples: {}
+      operationId: get-titles-title_id
 components:
   schemas: {}
