@@ -39,40 +39,7 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Organizer.v1.yaml
-              examples:
-                example-1:
-                  value:
-                    id: 0
-                    name: string
-                    abbreviation: string
-                    description: string
-                    icon: string
-                    supported_titles:
-                      - id: 0
-                        name: string
-                        short_name: string
-                        icon: string
-                        bannner: string
-                        card_bg: string
-                        genre: string
-                        platforms:
-                          - id: 0
-                            name: PlayStation 5
-                            abbreviation: PS5
-                            icon: 'http://example.com'
-                    organizer_integrations:
-                      website_url: string
-                      discord_url: string
-                      twitter_url: string
-                      twitch_url: string
-                      youtube_url: string
-                    user_context:
-                      logged_in: true
-                      lvl_staff: true
-                      organizer_staff: true
-                      organizer_owner: true
-                      permissions:
-                        - string
+              examples: {}
       operationId: get-organizers-organizer_id
     patch:
       summary: Update Organizer
@@ -170,12 +137,12 @@ paths:
   '/organizers/{organizer_id}/staff/{organizer_staff_id}':
     parameters:
       - schema:
-          type: string
+          type: integer
         name: organizer_id
         in: path
         required: true
       - schema:
-          type: string
+          type: integer
         name: organizer_staff_id
         in: path
         required: true
@@ -205,6 +172,7 @@ paths:
         '400':
           description: Bad Request
       operationId: delete-organizers-organizer_id-staff-organizer_staff_id
+      description: ''
 components:
   schemas: {}
   securitySchemes: {}
