@@ -1,0 +1,39 @@
+title: TitleDetailed
+type: object
+x-tags:
+  - Titles
+x-examples: {}
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  short_name:
+    type: string
+  genre:
+    type: string
+  icon:
+    type: string
+    format: uri
+  banner:
+    type: string
+    format: uri
+  card_bg:
+    type: string
+    format: uri
+  platforms:
+    type: array
+    items:
+      $ref: ./Platform.v1.yaml
+  game_modes:
+    type: array
+    items:
+      $ref: ./TitleGameMode.v1.yaml
+  maps:
+    type: array
+    items:
+      $ref: ./TitleMap.v1.yaml
+  roles:
+    type: array
+    items:
+      $ref: ./TitleRole.v1.yaml

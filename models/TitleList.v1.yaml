@@ -1,0 +1,24 @@
+title: TitleList
+type: object
+x-tags:
+  - Titles
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  short_name:
+    type: string
+  icon:
+    type: string
+  bannner:
+    type: string
+  card_bg:
+    type: string
+  genre:
+    type: string
+  platforms:
+    type: array
+    items:
+      $ref: ./Platform.v1.yaml
+x-examples: {}

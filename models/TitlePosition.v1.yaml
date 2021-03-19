@@ -1,0 +1,11 @@
+title: TitlePositions
+type: object
+x-tags:
+  - Titles
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  abbreviation:
+    type: string

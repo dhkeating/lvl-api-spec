@@ -1,0 +1,19 @@
+title: TitleStatistic
+type: object
+x-tags:
+  - Titles
+properties:
+  id:
+    type: integer
+  statistic_name:
+    type: string
+  statistic_type:
+    type: string
+    enum:
+      - 'N'
+      - T
+      - B
+    minLength: 1
+    maxLength: 1
+  order:
+    type: integer

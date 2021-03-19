@@ -1,0 +1,18 @@
+title: TitleRole
+type: object
+x-tags:
+  - Titles
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  positions:
+    type: array
+    items:
+      $ref: ./TitlePosition.v1.yaml
+  role_statistics:
+    type: array
+    items:
+      $ref: ./TitleStatistic.v1.yaml
+x-examples: {}

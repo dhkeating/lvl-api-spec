@@ -1,0 +1,17 @@
+title: Platform
+type: object
+x-tags:
+  - Platforms
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+    example: PlayStation 5
+  abbreviation:
+    type: string
+    example: PS5
+  icon:
+    type: string
+    format: uri
+x-examples: {}
